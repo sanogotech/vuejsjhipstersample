@@ -1,0 +1,12 @@
+{
+  "audiencierApp": {
+    "Entite": {
+      "null": "",
+      "CIE": "CIE",
+      "SODECI": "SODECI",
+      "AWALE": "AWALE",
+      "GS2E": "GS2E",
+      "SMART_ENERGY": "SMART_ENERGY"
+    }
+  }
+}
