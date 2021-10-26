@@ -4,29 +4,18 @@
     {
       "fieldName": "nom",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required",
-        "minlength"
-      ],
+      "fieldValidateRules": ["required", "minlength"],
       "fieldValidateRulesMinlength": "2"
     },
     {
       "fieldName": "prenom",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required",
-        "minlength"
-      ],
+      "fieldValidateRules": ["required", "minlength"],
       "fieldValidateRulesMinlength": "2"
     },
     {
-      "fieldName": "numCNI",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "required",
-        "minlength"
-      ],
-      "fieldValidateRulesMinlength": "2"
+      "fieldName": "ville",
+      "fieldType": "String"
     }
   ],
   "relationships": [],
@@ -40,5 +29,7 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": "*"
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
 }

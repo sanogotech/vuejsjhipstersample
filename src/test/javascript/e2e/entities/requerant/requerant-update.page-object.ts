@@ -12,5 +12,5 @@ export default class RequerantUpdatePage extends AlertPage {
 
   prenomInput: ElementFinder = element(by.css('input#requerant-prenom'));
 
-  numCNIInput: ElementFinder = element(by.css('input#requerant-numCNI'));
+  villeInput: ElementFinder = element(by.css('input#requerant-ville'));
 }

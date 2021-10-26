@@ -35,8 +35,8 @@ public class RequerantResourceIT {
     private static final String DEFAULT_PRENOM = "AAAAAAAAAA";
     private static final String UPDATED_PRENOM = "BBBBBBBBBB";
 
-    private static final String DEFAULT_NUM_CNI = "AAAAAAAAAA";
-    private static final String UPDATED_NUM_CNI = "BBBBBBBBBB";
+    private static final String DEFAULT_VILLE = "AAAAAAAAAA";
+    private static final String UPDATED_VILLE = "BBBBBBBBBB";
 
     @Autowired
     private RequerantRepository requerantRepository;
@@ -59,7 +59,7 @@ public class RequerantResourceIT {
         Requerant requerant = new Requerant()
             .nom(DEFAULT_NOM)
             .prenom(DEFAULT_PRENOM)
-            .numCNI(DEFAULT_NUM_CNI);
+            .ville(DEFAULT_VILLE);
         return requerant;
     }
     /**
@@ -72,7 +72,7 @@ public class RequerantResourceIT {
         Requerant requerant = new Requerant()
             .nom(UPDATED_NOM)
             .prenom(UPDATED_PRENOM)
-            .numCNI(UPDATED_NUM_CNI);
+            .ville(UPDATED_VILLE);
         return requerant;
     }
 
@@ -97,7 +97,7 @@ public class RequerantResourceIT {
         Requerant testRequerant = requerantList.get(requerantList.size() - 1);
         assertThat(testRequerant.getNom()).isEqualTo(DEFAULT_NOM);
         assertThat(testRequerant.getPrenom()).isEqualTo(DEFAULT_PRENOM);
-        assertThat(testRequerant.getNumCNI()).isEqualTo(DEFAULT_NUM_CNI);
+        assertThat(testRequerant.getVille()).isEqualTo(DEFAULT_VILLE);
     }
 
     @Test
@@ -160,25 +160,6 @@ public class RequerantResourceIT {
 
     @Test
     @Transactional
-    public void checkNumCNIIsRequired() throws Exception {
-        int databaseSizeBeforeTest = requerantRepository.findAll().size();
-        // set the field null
-        requerant.setNumCNI(null);
-
-        // Create the Requerant, which fails.
-
-
-        restRequerantMockMvc.perform(post("/api/requerants")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(TestUtil.convertObjectToJsonBytes(requerant)))
-            .andExpect(status().isBadRequest());
-
-        List<Requerant> requerantList = requerantRepository.findAll();
-        assertThat(requerantList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllRequerants() throws Exception {
         // Initialize the database
         requerantRepository.saveAndFlush(requerant);
@@ -190,7 +171,7 @@ public class RequerantResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(requerant.getId().intValue())))
             .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM)))
             .andExpect(jsonPath("$.[*].prenom").value(hasItem(DEFAULT_PRENOM)))
-            .andExpect(jsonPath("$.[*].numCNI").value(hasItem(DEFAULT_NUM_CNI)));
+            .andExpect(jsonPath("$.[*].ville").value(hasItem(DEFAULT_VILLE)));
     }
     
     @Test
@@ -206,7 +187,7 @@ public class RequerantResourceIT {
             .andExpect(jsonPath("$.id").value(requerant.getId().intValue()))
             .andExpect(jsonPath("$.nom").value(DEFAULT_NOM))
             .andExpect(jsonPath("$.prenom").value(DEFAULT_PRENOM))
-            .andExpect(jsonPath("$.numCNI").value(DEFAULT_NUM_CNI));
+            .andExpect(jsonPath("$.ville").value(DEFAULT_VILLE));
     }
     @Test
     @Transactional
@@ -231,7 +212,7 @@ public class RequerantResourceIT {
         updatedRequerant
             .nom(UPDATED_NOM)
             .prenom(UPDATED_PRENOM)
-            .numCNI(UPDATED_NUM_CNI);
+            .ville(UPDATED_VILLE);
 
         restRequerantMockMvc.perform(put("/api/requerants")
             .contentType(MediaType.APPLICATION_JSON)
@@ -244,7 +225,7 @@ public class RequerantResourceIT {
         Requerant testRequerant = requerantList.get(requerantList.size() - 1);
         assertThat(testRequerant.getNom()).isEqualTo(UPDATED_NOM);
         assertThat(testRequerant.getPrenom()).isEqualTo(UPDATED_PRENOM);
-        assertThat(testRequerant.getNumCNI()).isEqualTo(UPDATED_NUM_CNI);
+        assertThat(testRequerant.getVille()).isEqualTo(UPDATED_VILLE);
     }
 
     @Test

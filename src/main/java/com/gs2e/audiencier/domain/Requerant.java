@@ -32,10 +32,8 @@ public class Requerant implements Serializable {
     @Column(name = "prenom", nullable = false)
     private String prenom;
 
-    @NotNull
-    @Size(min = 2)
-    @Column(name = "num_cni", nullable = false)
-    private String numCNI;
+    @Column(name = "ville")
+    private String ville;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -72,17 +70,17 @@ public class Requerant implements Serializable {
         this.prenom = prenom;
     }
 
-    public String getNumCNI() {
-        return numCNI;
+    public String getVille() {
+        return ville;
     }
 
-    public Requerant numCNI(String numCNI) {
-        this.numCNI = numCNI;
+    public Requerant ville(String ville) {
+        this.ville = ville;
         return this;
     }
 
-    public void setNumCNI(String numCNI) {
-        this.numCNI = numCNI;
+    public void setVille(String ville) {
+        this.ville = ville;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -109,7 +107,7 @@ public class Requerant implements Serializable {
             "id=" + getId() +
             ", nom='" + getNom() + "'" +
             ", prenom='" + getPrenom() + "'" +
-            ", numCNI='" + getNumCNI() + "'" +
+            ", ville='" + getVille() + "'" +
             "}";
     }
 }

@@ -84,7 +84,7 @@ describe('Service Tests', () => {
           {
             nom: 'BBBBBB',
             prenom: 'BBBBBB',
-            numCNI: 'BBBBBB',
+            ville: 'BBBBBB',
           },
           elemDefault
         );
@@ -113,7 +113,7 @@ describe('Service Tests', () => {
           {
             nom: 'BBBBBB',
             prenom: 'BBBBBB',
-            numCNI: 'BBBBBB',
+            ville: 'BBBBBB',
           },
           elemDefault
         );

@@ -17,10 +17,10 @@
                         <span>{{requerant.prenom}}</span>
                     </dd>
                     <dt>
-                        <span v-text="$t('audiencierApp.requerant.numCNI')">Num CNI</span>
+                        <span v-text="$t('audiencierApp.requerant.ville')">Ville</span>
                     </dt>
                     <dd>
-                        <span>{{requerant.numCNI}}</span>
+                        <span>{{requerant.ville}}</span>
                     </dd>
                 </dl>
                 <button type="submit"

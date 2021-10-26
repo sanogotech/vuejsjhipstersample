@@ -16,10 +16,7 @@ const validations: any = {
       required,
       minLength: minLength(2),
     },
-    numCNI: {
-      required,
-      minLength: minLength(2),
-    },
+    ville: {},
   },
 };
 

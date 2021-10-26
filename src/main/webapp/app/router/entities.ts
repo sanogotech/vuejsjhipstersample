@@ -144,7 +144,7 @@ export default [
     component: AudienceUpdate,
     meta: { authorities: [Authority.USER] },
   },
-  
+
   // TODO New
   {
     path: '/audience/:contentieuxId/new',
@@ -336,6 +336,56 @@ export default [
     path: '/contentieux/:contentieuxId/view',
     name: 'ContentieuxView',
     component: ContentieuxDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+
+  {
+    path: '/requerant',
+    name: 'Requerant',
+    component: Requerant,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/requerant/new',
+    name: 'RequerantCreate',
+    component: RequerantUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/requerant/:requerantId/edit',
+    name: 'RequerantEdit',
+    component: RequerantUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/requerant/:requerantId/view',
+    name: 'RequerantView',
+    component: RequerantDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+
+  {
+    path: '/requerant',
+    name: 'Requerant',
+    component: Requerant,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/requerant/new',
+    name: 'RequerantCreate',
+    component: RequerantUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/requerant/:requerantId/edit',
+    name: 'RequerantEdit',
+    component: RequerantUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/requerant/:requerantId/view',
+    name: 'RequerantView',
+    component: RequerantDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

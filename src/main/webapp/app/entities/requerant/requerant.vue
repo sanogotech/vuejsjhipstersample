@@ -27,7 +27,7 @@
                     <th><span v-text="$t('global.field.id')">ID</span></th>
                     <th><span v-text="$t('audiencierApp.requerant.nom')">Nom</span></th>
                     <th><span v-text="$t('audiencierApp.requerant.prenom')">Prenom</span></th>
-                    <th><span v-text="$t('audiencierApp.requerant.numCNI')">Num CNI</span></th>
+                    <th><span v-text="$t('audiencierApp.requerant.ville')">Ville</span></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -39,7 +39,7 @@
                     </td>
                     <td>{{requerant.nom}}</td>
                     <td>{{requerant.prenom}}</td>
-                    <td>{{requerant.numCNI}}</td>
+                    <td>{{requerant.ville}}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <router-link :to="{name: 'RequerantView', params: {requerantId: requerant.id}}" tag="button" class="btn btn-info btn-sm details">

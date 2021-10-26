@@ -36,17 +36,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-control-label" v-text="$t('audiencierApp.requerant.numCNI')" for="requerant-numCNI">Num CNI</label>
-                        <input type="text" class="form-control" name="numCNI" id="requerant-numCNI"
-                            :class="{'valid': !$v.requerant.numCNI.$invalid, 'invalid': $v.requerant.numCNI.$invalid }" v-model="$v.requerant.numCNI.$model"  required/>
-                        <div v-if="$v.requerant.numCNI.$anyDirty && $v.requerant.numCNI.$invalid">
-                            <small class="form-text text-danger" v-if="!$v.requerant.numCNI.required" v-text="$t('entity.validation.required')">
-                                This field is required.
-                            </small>
-                            <small class="form-text text-danger" v-if="!$v.requerant.numCNI.minLength" v-text="$t('entity.validation.minlength', {min: 2})">
-                                This field is required to be at least 2 characters.
-                            </small>
-                        </div>
+                        <label class="form-control-label" v-text="$t('audiencierApp.requerant.ville')" for="requerant-ville">Ville</label>
+                        <input type="text" class="form-control" name="ville" id="requerant-ville"
+                            :class="{'valid': !$v.requerant.ville.$invalid, 'invalid': $v.requerant.ville.$invalid }" v-model="$v.requerant.ville.$model" />
                     </div>
                 </div>
                 <div>

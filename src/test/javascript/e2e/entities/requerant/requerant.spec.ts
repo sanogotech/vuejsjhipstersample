@@ -68,8 +68,8 @@ describe('Requerant e2e test', () => {
       await updatePage.prenomInput.sendKeys('prenom');
       expect(await updatePage.prenomInput.getAttribute('value')).to.match(/prenom/);
 
-      await updatePage.numCNIInput.sendKeys('numCNI');
-      expect(await updatePage.numCNIInput.getAttribute('value')).to.match(/numCNI/);
+      await updatePage.villeInput.sendKeys('ville');
+      expect(await updatePage.villeInput.getAttribute('value')).to.match(/ville/);
 
       expect(await updatePage.saveButton.isEnabled()).to.be.true;
       await updatePage.saveButton.click();
@@ -135,9 +135,9 @@ describe('Requerant e2e test', () => {
         await updatePage.prenomInput.sendKeys('modified');
         expect(await updatePage.prenomInput.getAttribute('value')).to.match(/modified/);
 
-        await updatePage.numCNIInput.clear();
-        await updatePage.numCNIInput.sendKeys('modified');
-        expect(await updatePage.numCNIInput.getAttribute('value')).to.match(/modified/);
+        await updatePage.villeInput.clear();
+        await updatePage.villeInput.sendKeys('modified');
+        expect(await updatePage.villeInput.getAttribute('value')).to.match(/modified/);
 
         await updatePage.saveButton.click();
 

@@ -74,7 +74,7 @@ class RequerantGatlingTest extends Simulation {
                 "id":null
                 , "nom":"SAMPLE_TEXT"
                 , "prenom":"SAMPLE_TEXT"
-                , "numCNI":"SAMPLE_TEXT"
+                , "ville":"SAMPLE_TEXT"
                 }""")).asJson
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_requerant_url"))).exitHereIfFailed
